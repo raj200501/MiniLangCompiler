@@ -1,0 +1,11 @@
+(executable
+ (name main)
+ (public_name miniLangCompiler)
+ (libraries str unix))
+
+(rule
+ (alias runtest)
+ (deps
+  (source_tree src)
+  (source_tree test))
+ (action (run ./test/test_lexer.exe)))
