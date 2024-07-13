@@ -1,0 +1,10 @@
+_build/
+*.cmx
+*.cmi
+*.cmo
+*.exe
+*.o
+*.a
+*.d
+.opam/
+.dune/
