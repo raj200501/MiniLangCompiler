@@ -1,0 +1,8 @@
+# Example: larger program
+let base = 100;
+    offset = 25;
+    scale = 3;
+    adjusted = base - offset;
+    scaled = adjusted * scale
+in
+  scaled / 5

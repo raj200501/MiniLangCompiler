@@ -1,0 +1,7 @@
+# Example: area + perimeter
+let width = 7;
+    height = 9;
+    area = width * height;
+    perimeter = width * 2 + height * 2
+in
+  area + perimeter

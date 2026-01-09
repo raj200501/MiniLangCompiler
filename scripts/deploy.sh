@@ -1,10 +1,19 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Set up AWS CLI
-aws configure
+if [[ $# -lt 1 ]]; then
+  echo "Usage: $0 <source-file>"
+  echo "Requires MINILANG_AWS_MODE=true and AWS credentials in the environment."
+  exit 1
+fi
 
-# Deploy to AWS S3
-aws s3 cp _build/default/src/miniLangCompiler s3://your-s3-bucket-name/
+SOURCE="$1"
 
-# Deploy logs and errors to DynamoDB
-aws dynamodb put-item --table-name MiniLangCompilerLogs --item file://error.json
+if [[ ! -d ".venv" ]]; then
+  python3 -m venv .venv
+fi
+
+source .venv/bin/activate
+
+export MINILANG_AWS_MODE=true
+PYTHONPATH=src python -m minilang_compiler.cli compile "$SOURCE"

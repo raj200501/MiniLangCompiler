@@ -1,0 +1,6 @@
+{
+  "bucket": "minilang-compiler-artifacts",
+  "table": "MiniLangCompilerLogs",
+  "storage_dir": "out",
+  "aws_mode": false
+}

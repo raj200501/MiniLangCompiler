@@ -1,0 +1,6 @@
+# Quickstart program for MiniLang
+let x = 40;
+    y = 2;
+    z = x + y
+in
+  z * 2
