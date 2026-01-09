@@ -8,3 +8,8 @@ _build/
 *.d
 .opam/
 .dune/
+.venv/
+__pycache__/
+.pytest_cache/
+out/
+*.pyc
